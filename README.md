@@ -6,18 +6,14 @@
 
 ```javascript
 const app = (numbers, target) => {
-  const arrNums = numbers.split(',');
-
-  const loops = {
-    total: arrNums.length * arrNums.length,
-    current: 0
-  };
+  const arrNums = numbers.split(",");
+  const loops = arrNums.length * arrNums.length;
   let loopIndex = 0;
   let loop = 0;
-  let output = '';
+  let output = "";
 
-  while(loops.current < loops.total) {
-    if(arrNums[loop] && arrNums[loopIndex]) {
+  for (let index = 0; index < loops; index++) {
+    if (arrNums[loop] && arrNums[loopIndex]) {
       const num1 = parseInt(arrNums[loop]);
       const num2 = parseInt(arrNums[loopIndex]);
       const numsInverted = `${arrNums[loopIndex]}, ${arrNums[loop]}`;
@@ -29,20 +25,18 @@ const app = (numbers, target) => {
     }
 
     // Loops and Index counters
-    loopIndex = (loopIndex === (arrNums.length - 1)) ? 0 : (loopIndex + 1);
-    if (loopIndex === (arrNums.length - 1)) loop++;
-    loops.current++;
+    loopIndex = loopIndex === arrNums.length - 1 ? 0 : loopIndex + 1;
+    if (loopIndex === arrNums.length - 1) loop++;
   }
 
   return output;
-}
+};
 
-let listNumbers = prompt('Insert the list of numbers: ');
-let targetSum = prompt('The target sum: ');
+let listNumbers = prompt("Insert the list of numbers: ");
+let targetSum = prompt("The target sum: ");
 
 if (listNumbers && targetSum) {
-  const pairs = app(listNumbers, targetSum);
-  alert(pairs);
+  console.log(app(listNumbers, targetSum));
 }
 ```
 
