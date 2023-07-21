@@ -26,12 +26,11 @@ Sample output is shown below.
 const app = (numbers, target) => {
   const arrNums = numbers.split(",");
   const arrayLen = arrNums.length;
-  const loops = arrayLen * arrayLen;
   let loopIndex = 0;
   let loop = 0;
   let output = "";
 
-  for (let index = 0; index < loops; index++) {
+  while (loop < arrayLen) {
     if (arrNums[loop] && arrNums[loopIndex]) {
       const num1 = parseInt(arrNums[loop]);
       const num2 = parseInt(arrNums[loopIndex]);
