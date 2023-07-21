@@ -28,17 +28,20 @@ const app = (numbers, target) => {
   const arrayLen = arrNums.length;
   let loopIndex = 0;
   let loop = 0;
-  let output = "";
+  let output = new Set();
 
   while (loop < arrayLen) {
     if (arrNums[loop] && arrNums[loopIndex]) {
       const num1 = parseInt(arrNums[loop]);
       const num2 = parseInt(arrNums[loopIndex]);
-      const numsInverted = `${arrNums[loopIndex]}, ${arrNums[loop]}`;
-      const sum = num1 + num2;
+      
+      const obj = {
+          nums_inverted: `${num2}, ${num1}`,
+          sum: num1 + num2
+      }
 
-      if (output.indexOf(numsInverted) === -1 && num1 > 0 && sum == target) {
-        output += `${arrNums[loop]}, ${arrNums[loopIndex]}\n`;
+      if (!output.has(obj.nums_inverted) && num1 > 0 && obj.sum == target) {
+        output.add(`${arrNums[loop]}, ${arrNums[loopIndex]}`);
       }
     }
 
@@ -47,7 +50,7 @@ const app = (numbers, target) => {
     if (loopIndex === arrayLen - 1) loop++;
   }
 
-  return output;
+  return Array.from(output).join(`,\n`);
 };
 
 let listNumbers = prompt("Insert the list of numbers: ");
