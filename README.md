@@ -1,6 +1,22 @@
 # Mach Eight Developer Test
 
-### Steps:
+### Task
+​
+The task is to write a function that finds pairs of integers from a list that
+sum to a given value. The function will take as input the list of numbers as
+well as the target sum.
+​
+Sample output is shown below.
+
+```
+> app 1,9,5,0,20,-4,12,16,7 12
+​
++ 12,0
++ 5,7
++ 16,-4
+```
+
+### Steps to run the test:
 
 1. Copy the code below:
 
@@ -43,4 +59,4 @@ if (listNumbers && targetSum) {
 
 2. Visit this [Online JavaScript Compiler](https://www.programiz.com/javascript/online-compiler/) and paste the code in the editor.
 
-That's all!
+That's all! Thank you for your time.
