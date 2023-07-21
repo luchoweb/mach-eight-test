@@ -25,7 +25,8 @@ Sample output is shown below.
 ```javascript
 const app = (numbers, target) => {
   const arrNums = numbers.split(",");
-  const loops = arrNums.length * arrNums.length;
+  const arrayLen = arrNums.length;
+  const loops = arrayLen * arrayLen;
   let loopIndex = 0;
   let loop = 0;
   let output = "";
@@ -43,8 +44,8 @@ const app = (numbers, target) => {
     }
 
     // Loops and Index counters
-    loopIndex = loopIndex === arrNums.length - 1 ? 0 : loopIndex + 1;
-    if (loopIndex === arrNums.length - 1) loop++;
+    loopIndex = loopIndex === arrayLen - 1 ? 0 : loopIndex + 1;
+    if (loopIndex === arrayLen - 1) loop++;
   }
 
   return output;
