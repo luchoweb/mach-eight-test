@@ -16,6 +16,8 @@ Sample output is shown below.
 + 16,-4
 ```
 
+**Important**: The algorithm to find the pairs must be faster than O(n^2).
+
 ### Steps to run the test:
 
 1. Copy the code below:
@@ -58,5 +60,3 @@ if (listNumbers && targetSum) {
 
 
 2. Visit this [Online JavaScript Compiler](https://www.programiz.com/javascript/online-compiler/) and paste the code in the editor.
-
-That's all! Thank you for your time.
